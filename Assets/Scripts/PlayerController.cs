@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject bulletPrefab;
     public GameObject playerPrefab;
-
     
 
     // Update is called once per frame
