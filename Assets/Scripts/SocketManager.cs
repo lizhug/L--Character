@@ -17,36 +17,24 @@ public class SocketManager : MonoBehaviour
     private int port = 10000;
     private Socket client;
 
-    SocketManager()
-    {
-        client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-        Debug.Log("create new client" + client);
-    }
-
 
     // Start is called before the first frame update
-  /*  void Start()
+    void Start()
     {
-*//*        client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);*//*
+        client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        client.Connect(host, port);
 
-        try
-        {
-            client.Connect(new IPEndPoint(IPAddress.Parse(host), port));
-
-            Debug.Log("server connected");
-        } catch (Exception e)
-        {
-            Debug.Log(e.Message);
-        }
-    }*/
+        Debug.Log("start");
+    }
 
     public void SendData(string message)
     {
+       
+
         try
         {
             byte[] data = Encoding.UTF8.GetBytes(message);
-            client.Send(data, data.Length, new IPEndPoint(IPAddress.Parse(host), port));
+            client.Send(data);
         } catch (Exception e)
         {
             print(e.Message);
@@ -56,7 +44,7 @@ public class SocketManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        client = new UdpClient();
+      /*  client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
         try
         {
@@ -64,7 +52,7 @@ public class SocketManager : MonoBehaviour
 
             Debug.Log("server connected again");
 
-            Debug.Log("LocalEndPoint = " + client.Client.LocalEndPoint + ". RemoteEndPoint = " + client.Client.RemoteEndPoint);
+            Debug.Log("LocalEndPoint = " + client.LocalEndPoint + ". RemoteEndPoint = " + client.RemoteEndPoint);
 
             byte[] data = Encoding.UTF8.GetBytes("xfdsfsdfdsfd");
             client.Send(data, data.Length, new IPEndPoint(IPAddress.Parse(host), port));
@@ -72,7 +60,7 @@ public class SocketManager : MonoBehaviour
         catch (Exception e)
         {
             Debug.Log(e.Message);
-        }
+        }*/
      
 
     }
