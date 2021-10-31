@@ -46,6 +46,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -102,6 +103,7 @@ MonoBehaviour:
   animator: {fileID: 1257450245102699455}
   rb: {fileID: 1257450245102699449}
   bulletPrefab: {fileID: 7528891945754124028, guid: 15c368326b5324743973fdeaa5a7b6a1, type: 3}
+  playerPrefab: {fileID: 0}
 --- !u!95 &1257450245102699455
 Animator:
   serializedVersion: 3
